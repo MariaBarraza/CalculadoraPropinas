@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         porcentajePropina = Double(sldPorcentajePropina.value)
         porcentajePropina.round()
         
-        lblPorcentajePropina.text = "\(porcentajePropina)%"
+        lblPorcentajePropina.text = "\(String(format: "%.0f", porcentajePropina))%"
         porcentajePropina = porcentajePropina / 100.0
         
         
@@ -34,10 +34,10 @@ class ViewController: UIViewController {
         cantidadPropina = Double(txtTotalSinPropina.text!)! * porcentajePropina
         
         //convertir double a string
-        lblCantidadPropina.text = "$\(cantidadPropina)"
+        lblCantidadPropina.text = "$\(String(format: "%.2f",cantidadPropina))"
         
         let totalConPropina = Double(txtTotalSinPropina.text!)! + cantidadPropina
-        lblTotlaConPropina.text = "$\(totalConPropina)"
+        lblTotlaConPropina.text = "$\(String(format: "%.2f",totalConPropina))"
         
     }
     
